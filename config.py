@@ -1,3 +1,3 @@
-class Url():
-    samokat_url ='https://qa-scooter.praktikum-services.ru/'
-    yandex_url = 'https://dzen.ru/?yredirect=true'
+class Url:
+    SAMOKAT_URL ='https://qa-scooter.praktikum-services.ru/'
+    YANDEX_URL = 'https://dzen.ru/?yredirect=true'
