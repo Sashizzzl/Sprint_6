@@ -1,6 +1,9 @@
 import allure
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+from config import Url
 
 class AboutRentPage(BasePage):
     TIME_FIELD = [By.XPATH,".//input[contains(@placeholder,'Когда')]"]
@@ -63,5 +66,12 @@ class AboutRentPage(BasePage):
     @allure.step('Получаем текущий URL')
     def get_current_url(self):
         return self.driver.current_url
+
+    @allure.step('Переключаемся на вкладку, открытую последней')
+    def switch_to_the_last_window(self):
+        self.switch_to_another_window(-1)
+    @allure.step('Ожидаем загрузки страницы Дзен')
+    def wait_for_browsing_url_yandex(self):
+        self.wait_for_browsing_url(Url.YANDEX_URL)
 
 

@@ -58,6 +58,12 @@ class BasePage:
             return True
         except TimeoutException:
             return False
+    @allure.step('Переключаемся на вкладку')
+    def switch_to_another_window(self,number):
+        self.driver.switch_to.window(self.driver.window_handles[number])
+    @allure.step('Ожидаем загрузки страницы')
+    def wait_for_browsing_url(self,url):
+        WebDriverWait(self.driver, 10).until(expected_conditions.url_to_be(url))
 
 
 

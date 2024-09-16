@@ -2,7 +2,7 @@ import pytest
 from selenium import webdriver
 from config import Url
 
-def browser_settings ():
+def browser_settings():
     firefox_options = webdriver.FirefoxOptions()
     return firefox_options
 
@@ -12,7 +12,6 @@ def driver():
     firefox.maximize_window()
     yield firefox
     firefox.quit()
-
 @pytest.fixture
 def navigate(driver):
     driver.get(Url.SAMOKAT_URL)
